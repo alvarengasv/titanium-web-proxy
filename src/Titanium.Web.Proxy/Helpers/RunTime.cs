@@ -18,19 +18,19 @@ namespace Titanium.Web.Proxy.Helpers
         /// cache for Windows platform check
         /// </summary>
         /// <returns></returns>
-        private static bool isRunningOnWindows => true;
+        private static bool isRunningOnWindows => Environment.OSVersion.Platform == PlatformID.Win32NT;
 
         /// <summary>
         ///     cache for mono runtime check
         /// </summary>
         /// <returns></returns>
-        private static bool isRunningOnLinux => false;
+        private static bool isRunningOnLinux => Environment.OSVersion.Platform == PlatformID.Unix;
 
         /// <summary>
         ///     cache for mac runtime check
         /// </summary>
         /// <returns></returns>
-        private static bool isRunningOnMac => false;
+        private static bool isRunningOnMac => Environment.OSVersion.Platform == PlatformID.MacOSX;
 #else
         /// <summary>
         /// cache for Windows platform check
