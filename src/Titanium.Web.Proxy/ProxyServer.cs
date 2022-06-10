@@ -591,11 +591,19 @@ namespace Titanium.Web.Proxy
         /// <summary>
         ///     Start this proxy server instance.
         /// </summary>
+        public void Start()
+        {
+            Start(true);
+        }
+        
+        /// <summary>
+        ///     Start this proxy server instance.
+        /// </summary>
         /// <param name="changeSystemProxySettings"> 
         ///     Whether or not clear any system proxy settings which is pointing to our own endpoint (causing a cycle).
         ///     E.g due to ungracious proxy shutdown before.
         /// </param>
-        public void Start(bool changeSystemProxySettings = true)
+        public void Start(bool changeSystemProxySettings)
         {
             if (ProxyRunning)
             {
